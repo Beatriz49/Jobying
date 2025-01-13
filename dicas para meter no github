@@ -1,0 +1,4 @@
+codes para enviar o codigo para o git
+git init
+git add .
+git push -u origin master
