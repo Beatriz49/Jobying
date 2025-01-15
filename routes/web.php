@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Category;
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -14,7 +17,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-
 
 Route::get('/home', function () {
     return view('pages.home');
@@ -34,4 +36,28 @@ Route::get('/', function () {
 
 Route::get('/candidatos', function () {
     return view('pages.candidatos');
+});
+
+Route::get('/categories', function () {
+    $categories = Category::all();
+    return view('categories.index', compact('categories'));
+});
+
+Route::get('/categories/create', function () {
+    return view('categories.create');
+});
+
+Route::post('/categories/store', function (Request $request) {
+    $request->validate([
+        'name' => 'required|min:3',
+        'slug' => 'required',
+        'image' => 'image',
+        'description' => 'min:3'
+    ]);
+    Category::create([
+        'name' => $request->input('name'),
+        'slug' => $request->input('slug'),
+        'description' => $request->input('description'),
+        'image' => $request->input('image'),
+    ]); 
 });
