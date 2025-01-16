@@ -54,10 +54,12 @@ Route::post('/categories/store', function (Request $request) {
         'image' => 'image',
         'description' => 'min:3'
     ]);
+    dd($request->all());
     Category::create([
         'name' => $request->input('name'),
         'slug' => $request->input('slug'),
         'description' => $request->input('description'),
         'image' => $request->input('image'),
-    ]); 
+    ]);
+    dd($request->all());
 });
