@@ -46,7 +46,6 @@ Route::get('/categories', function () {
 Route::get('/categories/create', function () {
     return view('categories.create');
 });
-
 Route::post('/categories/store', function (Request $request) {
     $request->validate([
         'name' => 'required|min:3',
@@ -61,5 +60,4 @@ Route::post('/categories/store', function (Request $request) {
         'description' => $request->input('description'),
         'image' => $request->input('image'),
     ]);
-    dd($request->all());
 });

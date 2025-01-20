@@ -20,7 +20,6 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
@@ -29,4 +28,3 @@ class CreateCategoriesTable extends Migration
         Schema::dropIfExists('categories');
     }
 }
-return new CreateCategoriesTable;
