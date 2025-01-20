@@ -39,7 +39,7 @@ Route::get('/candidatos', function () {
 });
 
 Route::get('/categories', function () {
-    $categories = Category::all();
+    $categories = Category::all();    
     return view('categories.index', compact('categories'));
 });
 
@@ -48,12 +48,12 @@ Route::get('/categories/create', function () {
 });
 Route::post('/categories/store', function (Request $request) {
     $request->validate([
-        'name' => 'required|min:3',
-        'slug' => 'required',
+        'name' => 'required|min:3|unique:categories,name',
+        'slug' => 'required|unique:categories,slug',
         'image' => 'image',
         'description' => 'min:3'
     ]);
-    dd($request->all());
+    
     Category::create([
         'name' => $request->input('name'),
         'slug' => $request->input('slug'),

@@ -13,15 +13,13 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome',
+        'name',
         'slug',
-        'descricao',
+        'description',
         'image',
     ];
+    
 
-    protected $casts = [
-        'image' => 'string',
-    ];
     public function getImageAttribute($value)
     {
         return url('storage/' . $value);
