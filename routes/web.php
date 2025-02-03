@@ -3,23 +3,30 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\CandidatoController;
+
+Route::get('/candidatos', [CandidatoController::class, 'index'])->name('candidatos.index');
+Route::get('/candidatos/{id}', [CandidatoController::class, 'show'])->name('candidatos.show');
+Route::get('/candidatos/create', [CandidatoController::class, 'create'])->name('candidatos.create');
+Route::post('/candidatos', [CandidatoController::class, 'store'])->name('candidatos.store');
 
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::resource('candidatos', CandidatoController::class);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+    ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->name('dashboard');
+        })->name('dashboard');
 });
 
-Route::get('/home', function () {
-    return view('pages.home');
+
+Route::get('/teste', function () {
+    return view('teste');
 });
 
 Route::get('/sobre', function () {
@@ -39,7 +46,7 @@ Route::get('/candidatos', function () {
 });
 
 Route::get('/categories', function () {
-    $categories = Category::all();    
+    $categories = Category::all();
     return view('categories.index', compact('categories'));
 });
 
@@ -53,7 +60,7 @@ Route::post('/categories/store', function (Request $request) {
         'image' => 'image',
         'description' => 'min:3'
     ]);
-    
+
     Category::create([
         'name' => $request->input('name'),
         'slug' => $request->input('slug'),
