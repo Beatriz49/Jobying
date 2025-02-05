@@ -9,6 +9,7 @@ Route::get('/candidatos', [CandidatoController::class, 'index'])->name('candidat
 Route::get('/candidatos/{id}', [CandidatoController::class, 'show'])->name('candidatos.show');
 Route::get('/candidatos/create', [CandidatoController::class, 'create'])->name('candidatos.create');
 Route::post('/candidatos', [CandidatoController::class, 'store'])->name('candidatos.store');
+Route::post('/adicionar-candidato', [CandidatoController::class, 'store'])->name('candidato.store');
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,7 +24,12 @@ Route::middleware([
         return view('dashboard');
         })->name('dashboard');
 });
-
+Route::get('/candidato', function () {
+    return view('candidato');
+});
+Route::get('/adicionar-candidato', function () {
+    return view('adicionar-candidato');
+});
 
 Route::get('/teste', function () {
     return view('teste');

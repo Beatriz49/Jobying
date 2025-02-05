@@ -34,7 +34,7 @@
             <p class="text-gray-700">Trabalho temporário / Freelancer</p>
         </div>
 
-        <a href="index.html" class="block mt-6 text-center text-blue-600 hover:underline">Voltar</a>
+        <a href="teste" class="block mt-6 text-center text-blue-600 hover:underline">Voltar</a>
     </div>
 </body>
 </html>
