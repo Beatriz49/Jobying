@@ -4,12 +4,23 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CandidatoController;
+use App\Models\Candidato;
 
 Route::get('/candidatos', [CandidatoController::class, 'index'])->name('candidatos.index');
-Route::get('/candidatos/{id}', [CandidatoController::class, 'show'])->name('candidatos.show');
 Route::get('/candidatos/create', [CandidatoController::class, 'create'])->name('candidatos.create');
+Route::get('/candidatos/{id}', [CandidatoController::class, 'show'])->name('candidatos.show');
 Route::post('/candidatos', [CandidatoController::class, 'store'])->name('candidatos.store');
-Route::post('/adicionar-candidato', [CandidatoController::class, 'store'])->name('candidato.store');
+Route::post('/candidatos/store', function (Request $request) {
+    $request->validate([
+        'nome' => 'required',        
+    ]);
+
+    Candidato::create([
+        
+    ]);
+});
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,8 +38,8 @@ Route::middleware([
 Route::get('/candidato', function () {
     return view('candidato');
 });
-Route::get('/adicionar-candidato', function () {
-    return view('adicionar-candidato');
+Route::get('/candidato/create', function () {
+    return view('candidato.create');
 });
 
 Route::get('/teste', function () {
@@ -59,6 +70,7 @@ Route::get('/categories', function () {
 Route::get('/categories/create', function () {
     return view('categories.create');
 });
+
 Route::post('/categories/store', function (Request $request) {
     $request->validate([
         'name' => 'required|min:3|unique:categories,name',
