@@ -1,8 +1,8 @@
 <x-guestLayout>
     <section class="relative w-full h-screen m-0 p-0 overflow-hidden">
         <!-- Vídeo de Fundo -->
-        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover">
-            <source src="/videos/video_exemplo.mp4" type="video/mp4">
+        <video autoplay muted loop class="absolute top-0 left-0  w-full h-full object-cover">
+            <source src="/videos/video_exemplo.mp4" type="video/mp4" >
         </video>
 
         <!-- Conteúdo sobreposto -->

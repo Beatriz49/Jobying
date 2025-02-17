@@ -3,11 +3,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <title>Lista de Candidatos</title>
+        <title>Lista de Empresas</title>
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-3xl font-bold text-gray-800">Candidatos</h1>
             <a href="/candidatos/create" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
-                Adicionar Candidato
+                Adicionar Empresa
             </a>
         </div>
 
