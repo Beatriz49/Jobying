@@ -10,7 +10,7 @@
     <body class="bg-gray-100 p-8">
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-3xl font-bold text-gray-800">Candidatos</h1>
-            <a href="adicionar-candidato" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+            <a href="/candidatos/create" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
                 Adicionar Candidato
             </a>
         </div>

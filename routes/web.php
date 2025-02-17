@@ -6,18 +6,37 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\CandidatoController;
 use App\Models\Candidato;
 
+Route::get('/candidato', function () {
+    return view('candidato');
+});
+Route::get('/candidato/create', function () {
+    return view('candidato.create');
+});
+
 Route::get('/candidatos', [CandidatoController::class, 'index'])->name('candidatos.index');
 Route::get('/candidatos/create', [CandidatoController::class, 'create'])->name('candidatos.create');
 Route::get('/candidatos/{id}', [CandidatoController::class, 'show'])->name('candidatos.show');
 Route::post('/candidatos', [CandidatoController::class, 'store'])->name('candidatos.store');
+
+
 Route::post('/candidatos/store', function (Request $request) {
     $request->validate([
-        'nome' => 'required',        
+        'nome' => 'required',
+        'idade' => 'required',
+        'skills' => 'required',
+        'trabalhos' => 'required',
+        'procurando' => 'required',
     ]);
-
+    dd($request->all());
     Candidato::create([
-        
+        'nome' => $request->input('nome'),
+        'idade' => $request->input('idade'),
+        'skills' => $request->input('skills'),
+        'experiencias' => $request->input('experiencias'),
+        'trabalhos' => $request->input('trabalhos'),
+        'procurando' => $request->input('procurando'),
     ]);
+    return redirect()->route('candidatos.index');
 });
 
 
@@ -35,12 +54,7 @@ Route::middleware([
         return view('dashboard');
         })->name('dashboard');
 });
-Route::get('/candidato', function () {
-    return view('candidato');
-});
-Route::get('/candidato/create', function () {
-    return view('candidato.create');
-});
+
 
 Route::get('/teste', function () {
     return view('teste');

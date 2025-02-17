@@ -15,8 +15,8 @@
         <p class="text-gray-600">Experiências: {{ $candidato->experiencias }}</p>
         <p class="text-gray-600">Trabalhos anteriores: {{ $candidato->trabalhos }}</p>
         <p class="text-gray-600">Procurando: {{ $candidato->procurando }}</p>
-        {{-- <a href="{{ route('candidatos.index') }}" class="block text-center mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">Voltar</a> --}}
-        <a href="/candidatos" class="block text-center mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">Voltar</a>
+        {{---<a href="{{ route('candidatos.index') }}" class="block text-center mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">Voltar</a> --}}
+        <a href="/candidatos/store" class="block text-center mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg">Voltar</a>
     </div>
 </body>
 </html>
