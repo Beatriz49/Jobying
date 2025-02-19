@@ -5,7 +5,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CandidatoController;
 use App\Models\Candidato;
-
+use App\Models\Image;
 Route::get('/candidato', function () {
     return view('candidato');
 });
@@ -38,7 +38,26 @@ Route::post('/candidatos/store', function (Request $request) {
     ]);
     return redirect()->route('candidatos.index');
 });
-
+Route::get('/images', function () {
+    $images = Image::all();
+    return view('images.index', ['images' => $images]);
+});
+Route::get('/image_upload', function () {
+    return view('image_upload');
+});
+Route::post('/image_upload/store', function (Request $request) {
+    $request->validate([
+        'name' => 'required',
+        'image' => 'required|image|mimes:jpeg,png|max:2048'
+    ]);
+    $imageName = time() . "." . $request->image->extension();
+    $request->image->move(public_path('images'), $imageName);
+    Image::create([
+        'name' => $request['name'],
+        'path' => $imageName
+    ]);
+    return redirect('/');
+});
 
 
 Route::get('/', function () {

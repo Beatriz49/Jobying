@@ -1,27 +1,27 @@
 <?php
-    public function store(Request $request) {
+public function store(Request $request) {
     $request->validate([
         'nome' => 'required|string|max:255',
         'idade' => 'required|integer',
-        'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Permite upload de imagens
+        'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         'skills' => 'required|string',
         'experiencias' => 'required|string',
         'trabalhos' => 'required|string',
         'procurando' => 'required|string',
     ]);
 
-    // Salvar a imagem no diretório "storage/app/public/fotos"
+    // Salvar a imagem na pasta "storage/app/public/candidatos"
     if ($request->hasFile('foto')) {
-        $fotoPath = $request->file('foto')->store('fotos', 'public');
+        $fotoPath = $request->file('foto')->store('candidatos', 'public');
     } else {
-        $fotoPath = null; // Caso não envie foto
+        $fotoPath = null;
     }
 
-    // Criar o candidato no banco de dados
+    // Criar candidato
     Candidato::create([
         'nome' => $request->nome,
         'idade' => $request->idade,
-        'foto' => $fotoPath, // Salva o caminho da imagem no banco
+        'foto' => $fotoPath,
         'skills' => $request->skills,
         'experiencias' => $request->experiencias,
         'trabalhos' => $request->trabalhos,
@@ -29,5 +29,5 @@
     ]);
 
     return redirect()->route('candidatos.index')->with('success', 'Candidato adicionado com sucesso!');
-}
+};
 >
