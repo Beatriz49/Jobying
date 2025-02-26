@@ -35,38 +35,43 @@ Route::post('/candidatos/store', function (Request $request) {
         'experiencias' => $request->input('experiencias'),
         'trabalhos' => $request->input('trabalhos'),
         'procurando' => $request->input('procurando'),
-        'image' => $request
     ]);
     return redirect()->route('candidatos.index');
 });
+
+Route::get('/images/{id}', function ($id) {
+    $image = Image::find($id);
+    return view('images.show', ['image' => $image]);
+});
+
+
 Route::get('/images', function () {
     $images = Image::all();
-    return view('images.index', compact('images'));
+    return view('images.index', ['images' => $images]);
 });
 
-Route::get('/images/create', function () {
-    return view('images.create1');
+
+
+
+Route::get('/image_upload', function () {
+    return view('image_upload');
 });
 
-Route::post('/images', function (Request $request) {
 
+Route::post('/image_upload/store', function (Request $request) {
     $request->validate([
         'name' => 'required',
-        'image' => 'required|image|mimes:jpeg,png,gif|max:2048',
-        'teste' => 'required'
+        'image' => 'required|image|mimes:jpeg,png|max:2048'
     ]);
-
     $imageName = time() . "." . $request->image->extension();
-    $request->image->move(public_path('img'), $imageName);
-
+    $request->image->move(public_path('images'), $imageName);
     Image::create([
         'name' => $request['name'],
-        'path' => $imageName,
-        'teste' => $request['teste'],
+        'path' => $imageName
     ]);
-
-    return redirect('/images');
+    return redirect('/');
 });
+
 
 Route::get('/', function () {
     return view('welcome');
