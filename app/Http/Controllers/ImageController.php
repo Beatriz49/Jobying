@@ -17,6 +17,15 @@
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
+        <div>
+            <x-label>teste</x-label>
+            <x-input type="teste" name="teste" id="teste"/>
+            @error('teste')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+
+
         <x-button>Upload</x-button>
 
     </div>

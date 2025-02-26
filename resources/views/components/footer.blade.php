@@ -2,13 +2,13 @@
     <div class="flex justify-between items-center">
         <div class="flex justify-start space-x-4 text-lg">
             <a href="https://www.instagram.com/jobying_62">
-                <img src="/images/Instagram_logo_2022.svg.png" width="35">
+                <img src="/imagens/Instagram_logo_2022.svg.png" width="35">
             </a>
             <a href="https://x.com/jobying_62">
-                <img src="/images/1725374683twitter-x-logo.png" width="35">
+                <img src="/imagens/1725374683twitter-x-logo.png" width="35">
             </a>
             <a href="https://www.facebook.com/people/Jonbying-Portugal/pfbid0gY7pq1sPSeFzz9X7PnvydCeJ36SrQ2FkMczbHk3B996DCCqAkMz1YCZE6NkmnFwLl/">
-                <img src="/images/Facebook_logo_(square).png" width="35">
+                <img src="/imagens/Facebook_logo_(square).png" width="35">
             </a>
         </div>
         <div class="text-lg">

@@ -2,7 +2,7 @@
     <div class="flex items-center justify-between w-full bg-gray-400 text-white p-2.5 z-50">
         <!-- Logotipo -->
         <a href="/">
-            <img src="/images/jobyinglogo.png" alt="Logotipo" class="h-12">
+            <img src="/imagens/jobyinglogo.png" alt="Logotipo" class="h-12">
         </a>
 
         <!-- Menu de Navegação -->

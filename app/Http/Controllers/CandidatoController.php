@@ -21,8 +21,8 @@ class CandidatoController extends Controller {
         $request->validate([
             'nome' => 'required',
             'idade' => 'required|integer',
-            'foto' => 'nullable|url',
-            'skills' => 'required',
+            'foto' => 'nullable',
+            'skills' => 'required|min:3',
             'experiencias' => 'required',
             'trabalhos' => 'required',
             'procurando' => 'required',
