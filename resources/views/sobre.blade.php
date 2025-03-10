@@ -16,7 +16,7 @@
     }
 
     </style> -->
-    <section class="rounded m-4 p-4 bg-[#c5c7c9]">
+    <section class="rounded m-4 p-4 bg-[#edeeee]">
         <h1>Sobre nós</h1>
         <div class="space-y-2 leading-relaxed text-justify">
             <p>

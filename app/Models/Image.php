@@ -12,5 +12,9 @@ class Image extends Model
         'skills',
         'teste',
         'image',
+        'procurando',
+        'experiencias',
+        'trabalhos',
+        'idade',
     ];
 }

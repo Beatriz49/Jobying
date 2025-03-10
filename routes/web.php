@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CandidatoController;
+use App\Http\Controllers\ImageController;
 use App\Models\Candidato;
 use App\Models\Image;
 Route::get('/candidato', function () {
@@ -26,6 +27,7 @@ Route::post('/candidatos/store', function (Request $request) {
         'skills' => 'required',
         'trabalhos' => 'required',
         'procurando' => 'required',
+
     ]);
     dd($request->all());
     Candidato::create([
@@ -39,37 +41,22 @@ Route::post('/candidatos/store', function (Request $request) {
     return redirect()->route('candidatos.index');
 });
 
+
+
 Route::get('/images/{id}', function ($id) {
     $image = Image::find($id);
     return view('images.show', ['image' => $image]);
 });
 
+Route::get('/images/create', function () {
+    return view('images.create1');
+});
+
+
 
 Route::get('/images', function () {
     $images = Image::all();
     return view('images.index', ['images' => $images]);
-});
-
-
-
-
-Route::get('/image_upload', function () {
-    return view('image_upload');
-});
-
-
-Route::post('/image_upload/store', function (Request $request) {
-    $request->validate([
-        'name' => 'required',
-        'image' => 'required|image|mimes:jpeg,png|max:2048'
-    ]);
-    $imageName = time() . "." . $request->image->extension();
-    $request->image->move(public_path('images'), $imageName);
-    Image::create([
-        'name' => $request['name'],
-        'path' => $imageName
-    ]);
-    return redirect('/');
 });
 
 
@@ -100,13 +87,7 @@ Route::get('/contacto', function () {
     return view('pages.contacto');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/candidatos', function () {
-    return view('pages.candidatos');
-});
+// Removed duplicate routes
 
 Route::get('/categories', function () {
     $categories = Category::all();

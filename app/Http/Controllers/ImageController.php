@@ -24,6 +24,42 @@
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
+        <div>
+            <x-label>skills</x-label>
+            <x-input type="skills" name="skills" id="skills"/>
+            @error('skills')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+        <div>
+            <x-label>procurando</x-label>
+            <x-input type="procurando" name="procurando" id="procurando"/>
+            @error('procurando')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+        <div>
+            <x-label>experiencias</x-label>
+            <x-input type="experiencias" name="experiencias" id="experiencias"/>
+            @error('experiencias')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+        <div>
+            <x-label>trabalhos</x-label>
+            <x-input type="trabalhos" name="trabalhos" id="trabalhos"/>
+            @error('trabalhos')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+        <div>
+            <x-label>idade</x-label>
+            <x-input type="idade" name="idade" id="idade"/>
+            @error('idade')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+
 
 
         <x-button>Upload</x-button>
