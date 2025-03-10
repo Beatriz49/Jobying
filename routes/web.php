@@ -41,15 +41,14 @@ Route::post('/candidatos/store', function (Request $request) {
     return redirect()->route('candidatos.index');
 });
 
+Route::get('/images/create', function () {
+    return view('images.create1');
+});
 
 
 Route::get('/images/{id}', function ($id) {
     $image = Image::find($id);
     return view('images.show', ['image' => $image]);
-});
-
-Route::get('/images/create', function () {
-    return view('images.create1');
 });
 
 

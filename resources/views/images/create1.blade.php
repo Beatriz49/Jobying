@@ -30,7 +30,7 @@
 
             <div>
                 <x-label for="idade">Idade</x-label>
-                <x-input type="text" name="idade" id="idade"/>
+                <x-input type="number" name="idade" id="idade"/>
                 @error('idade')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -57,4 +57,4 @@
 
     </form>
 
-    </x-guestLayout>
+    </x-guest-layout>

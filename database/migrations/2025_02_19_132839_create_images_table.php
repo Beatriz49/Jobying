@@ -14,6 +14,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('path');
             $table->string('teste') ->nullable();
+            $table->string('idade') ->nullable();
+            $table->string('procurando') ->nullable();
+            $table->string('skills') ->nullable();
             $table->timestamps();
         });
     }
