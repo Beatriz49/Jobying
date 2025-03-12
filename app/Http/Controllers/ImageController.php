@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guestLayout>
 <h1 class="text-4xl">Upload de imagens</h1>
 <form method="POST" action="/images" enctype="multipart/form-data">
     @csrf
@@ -19,49 +19,42 @@
         </div>
         <div>
             <x-label>teste</x-label>
-            <x-input type="text" name="teste" id="teste"/>
+            <x-input type="teste" name="teste" id="teste"/>
             @error('teste')
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
         <div>
-            <x-label>idade</x-label>
-            <x-input type="num" name="idade" id="idade"/>
-            @error('idade')
-                <p class="text-sm text-red-600">{{ $message }}</p>
-            @enderror
-        </div>
-        <div>
             <x-label>skills</x-label>
-            <x-input type="text" name="skills" id="skills"/>
+            <x-input type="skills" name="skills" id="skills"/>
             @error('skills')
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
         <div>
             <x-label>procurando</x-label>
-            <x-input type="text" name="procurando" id="procurando"/>
+            <x-input type="procurando" name="procurando" id="procurando"/>
             @error('procurando')
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
         <div>
             <x-label>experiencias</x-label>
-            <x-input type="text" name="experiencias" id="experiencias"/>
+            <x-input type="experiencias" name="experiencias" id="experiencias"/>
             @error('experiencias')
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
         <div>
             <x-label>trabalhos</x-label>
-            <x-input type="text" name="trabalhos" id="trabalhos"/>
+            <x-input type="trabalhos" name="trabalhos" id="trabalhos"/>
             @error('trabalhos')
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
         <div>
             <x-label>idade</x-label>
-            <x-input type="text" name="idade" id="idade"/>
+            <x-input type="idade" name="idade" id="idade"/>
             @error('idade')
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror

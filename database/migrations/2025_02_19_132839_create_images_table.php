@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('idade') ->nullable();
             $table->string('procurando') ->nullable();
             $table->string('skills') ->nullable();
+            $table->string('image');
             $table->timestamps();
         });
     }

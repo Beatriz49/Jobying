@@ -9,12 +9,11 @@ class Image extends Model
     protected $fillable = [
         'name',
         'path',
-        'skills',
+        'idade',
         'teste',
         'image',
         'procurando',
         'experiencias',
-        'trabalhos',
-        'idade',
+        'skills',
     ];
 }
