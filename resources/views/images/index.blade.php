@@ -9,6 +9,8 @@
                 <a href="/images/{{ $image->id }}">
                 <img class="h-48 m-auto" src="/img/{{$image->path}}"/>
                 <p class="text-center">{{ $image->name }}</p>
+
+
             </div>
         @endforeach
         </a>

@@ -5,6 +5,7 @@
             <source src="/videos/video_exemplo.mp4" type="video/mp4" >
         </video>
 
+
         <!-- Conteúdo sobreposto -->
         <div class="relative flex flex-col justify-center items-center h-full bg-gray-900 bg-opacity-30">
             <h1 class="text-white text-center text-3xl lg:text-5xl font-semibold p-2 rounded">

@@ -44,22 +44,21 @@ Route::post('/candidatos/store', function (Request $request) {
 Route::post('/images/store', function (Request $request) {
     $request->validate([
         'name' => 'required',
-        'image' => 'required|image|mimes:jpeg,png,gif|max:2048',
-        'teste' => 'nullable',
-        'skills' => 'required',
+        'image' => 'required|image:jpeg,png,jpg,gif,svg|max:2048',
+        'teste' => 'required',
+        'skills' => 'nullable',
         'procurando' => 'required',
         'experiencias' => 'required',
         'trabalhos' => 'required',
         'idade' => 'required',
     ]);
 
+
     $imageName = time() . "." . $request->image->extension();
     $request->image->move(public_path('img'), $imageName);
-
     Image::create([
         'name' => $request->input('name'),
         'path' => $imageName,
-        'image' => $request->input('image'),
         'teste' => $request->input('teste'),
         'skills' => $request->input('skills'),
         'procurando' => $request->input('procurando'),
@@ -70,10 +69,10 @@ Route::post('/images/store', function (Request $request) {
 
     return redirect()->route('images.index');
 });
-
 Route::get('/images/create', function () {
     return view('images.create1');
 });
+
 
 
 

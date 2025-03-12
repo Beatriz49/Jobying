@@ -51,8 +51,29 @@
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
+        <div>
+            <x-label for="procurando">procurando</x-label>
+            <x-input type="text" name="procurando" id="procurando"/>
+            @error('procurando')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+        <div>
+            <x-label for="experiencias">experiencias</x-label>
+            <x-input type="text" name="experiencias" id="experiencias"/>
+            @error('experiencias')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+        <div>
+            <x-label for="trabalhos">trabalhos</x-label>
+            <x-input type="text" name="trabalhos" id="trabalhos"/>
+            @error('trabalhos')
+                <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
         <x-button>Upload</x-button>
-
+        <a href="/images" class="bg-red-400 p-2 rounded">Voltar</a>
     </form>
 
     </x-guest-layout>
