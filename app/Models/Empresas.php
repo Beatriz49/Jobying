@@ -9,11 +9,13 @@ class Candidato extends Model
     protected $fillable = [
         'name',
         'path',
-        'idade',
-        'teste',
+        'horario',
+        'data',
         'image',
-        'procurando',
-        'experiencias',
-        'skills',
+        'cargo',
+        'local',
+        'beneficio',
+        'perfilesperado',
+        'detalhes',
     ];
 }

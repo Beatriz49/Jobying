@@ -1,7 +1,7 @@
 <x-guest-layout>
-    <h1 class="text-4xl">Upload de imagens</h1>
+    <h1 class="text-4xl">Criar Candidatura</h1>
 
-    <form method="POST" action="/images/store" enctype="multipart/form-data">
+    <form method="POST" action="/candidato/store" enctype="multipart/form-data">
         @csrf
         <div class="space-y-4">
             <div>
@@ -73,7 +73,7 @@
             @enderror
         </div>
         <x-button>Upload</x-button>
-        <a href="/images" class="bg-red-400 p-2 rounded">Voltar</a>
+        <a href="/candidato" class="bg-red-400 p-2 rounded">Voltar</a>
     </form>
 
-    </x-guest-layout>
+</x-guest-layout>

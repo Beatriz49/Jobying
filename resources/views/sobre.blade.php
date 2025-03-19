@@ -1,21 +1,4 @@
 <x-guestLayout>
-  <!-- <style>
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-    }
-    section {
-            max-width: 800px;
-            margin: 100px auto;
-            padding: 20px;
-            background: #e9e9e9;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)\;
-    }
-
-    </style> -->
     <section class="rounded m-4 p-4 bg-[#edeeee]">
         <h1>Sobre nós</h1>
         <div class="space-y-2 leading-relaxed text-justify">

@@ -5,43 +5,13 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CandidatoController;
 use App\Http\Controllers\ImageController;
-use App\Models\Candidato;
+use App\Models\candidato;
+use App\Models\empresas;
+use App\Http\Controllers\EmpresasController;
 use App\Models\Image;
-Route::get('/candidato', function () {
-    return view('candidato');
-});
-Route::get('/candidato/create', function () {
-    return view('candidato.create');
-});
-
-Route::get('/candidatos', [CandidatoController::class, 'index'])->name('candidatos.index');
-Route::get('/candidatos/create', [CandidatoController::class, 'create'])->name('candidatos.create');
-Route::get('/candidatos/{id}', [CandidatoController::class, 'show'])->name('candidatos.show');
-Route::post('/candidatos', [CandidatoController::class, 'store'])->name('candidatos.store');
 
 
-Route::post('/candidatos/store', function (Request $request) {
-    $request->validate([
-        'nome' => 'required',
-        'idade' => 'required',
-        'skills' => 'required',
-        'trabalhos' => 'required',
-        'procurando' => 'required',
-
-    ]);
-    dd($request->all());
-    Candidato::create([
-        'nome' => $request->input('nome'),
-        'idade' => $request->input('idade'),
-        'skills' => $request->input('skills'),
-        'experiencias' => $request->input('experiencias'),
-        'trabalhos' => $request->input('trabalhos'),
-        'procurando' => $request->input('procurando'),
-    ]);
-    return redirect()->route('candidatos.index');
-});
-
-Route::post('/images/store', function (Request $request) {
+Route::post('/candidato/store', function (Request $request) {
     $request->validate([
         'name' => 'required',
         'image' => 'required|image:jpeg,png,jpg,gif,svg|max:2048',
@@ -67,46 +37,87 @@ Route::post('/images/store', function (Request $request) {
         'idade' => $request->input('idade'),
     ]);
 
-    return redirect()->route('images.index');
+    return redirect()->route('candidato.index');
 });
-Route::get('/images/create', function () {
-    return view('images.create1');
+Route::get('/candidato/create', function () {
+    return view('candidato.create1');
 });
 
 
 
 
-Route::get('/images/{id}', function ($id) {
+Route::get('/candidato/{id}', function ($id) {
     $image = Image::find($id);
-    return view('images.show', ['image' => $image]);
+    return view('candidato.show', ['image' => $image]);
 });
 
 
 
-Route::get('/images', function () {
+Route::get('/candidato', function () {
     $images = Image::all();
-    return view('images.index', ['images' => $images]);
+    return view('candidato.index', ['images' => $images]);
+});
+
+
+
+
+
+Route::post('/empresas/store', function (Request $request) {
+    $request->validate([
+        'name' => 'required',
+        'image' => 'required|image:jpeg,png,jpg,gif,svg|max:2048',
+        'horario' => 'required',
+        'data' => 'nullable',
+        'cargo' => 'required',
+        'local' => 'required',
+        'beneficios' => 'required',
+        'perfilesperado' => 'required',
+        'detalhes' => 'required',
+    ]);
+
+
+    $imageName = time() . "." . $request->image->extension();
+    $request->image->move(public_path('img2'), $imageName);
+    Image::create([
+        'name' => $request->input('name'),
+        'path' => $imageName,
+        'horario' => $request->input('horario'),
+        'data' => $request->input('data'),
+        'cargo' => $request->input('cargo'),
+        'local' => $request->input('local'),
+        'beneficio' => $request->input('beneficio'),
+        'perfilesperado' => $request->input('perfilesperado'),
+        'detalhes' => $request->input('detalhes'),
+]);
+
+    return redirect()->route('empresas.index');
+});
+Route::get('/empresas/create', function () {
+    return view('empresas.create1');
+});
+
+
+
+
+Route::get('/empresas/{id}', function ($id) {
+    $image = Image::find($id);
+    return view('empresas.show', ['image' => $image]);
+});
+
+
+
+Route::get('/empresas', function () {
+    $images = Image::all();
+    return view('empresas.index', ['images' => $images]);
 });
 
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('candidatos', CandidatoController::class);
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-    ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-        })->name('dashboard');
-});
 
 
-Route::get('/teste', function () {
-    return view('teste');
-});
+
 
 Route::get('/sobre', function () {
     return view('sobre');
