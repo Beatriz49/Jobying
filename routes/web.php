@@ -75,11 +75,11 @@ Route::post('/empresas/store', function (Request $request) {
         'detalhes' => 'required',
     ]);
 
-
     $imageName = time() . "." . $request->image->extension();
     $request->image->move(public_path('img2'), $imageName);
+
     Image::create([
-        'name' => $request->input('name'),
+        'name' => $request->input('name'),        
         'path' => $imageName,
         'horario' => $request->input('horario'),
         'data' => $request->input('data'),
@@ -109,7 +109,7 @@ Route::get('/empresas/{id}', function ($id) {
 Route::get('/empresas', function () {
     $empresas = Image::all();
     return view('empresas.index', ['images' => $empresas]);
-});
+})->name('empresas.index');
 
 
 Route::get('/', function () {
