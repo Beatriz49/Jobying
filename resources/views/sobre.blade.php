@@ -26,4 +26,4 @@
             </p>
         </div>
     </section>
-</x-guestLayout>y
+</x-guestLayout>

@@ -4,11 +4,11 @@
 
 
     <div class="grid grid-cols-4 gap-4 max-w-4xl m-auto my-8">
-        @foreach ($images as $image)
+        @foreach ($images as $empresas)
             <div class="border">
-                <a href="/empresas/{{ $image->id }}">
-                <img class="h-48 m-auto" src="/img2/{{$image->path}}"/>
-                <p class="text-center">{{ $image->name }}</p>
+                <a href="/empresas/{{ $empresas->id }}">
+                <img class="h-48 m-auto" src="/img2/{{$empresas->path}}"/>
+                <p class="text-center">{{ $empresas->name }}</p>
 
 
             </div>

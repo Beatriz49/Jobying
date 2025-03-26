@@ -15,5 +15,7 @@ class Image extends Model
         'procurando',
         'experiencias',
         'skills',
+
     ];
 }
+// habilitações

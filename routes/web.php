@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\CandidatoController;
 use App\Http\Controllers\ImageController;
 use App\Models\candidato;
-use App\Models\empresas;
 use App\Http\Controllers\EmpresasController;
 use App\Models\Image;
+use App\Models\Empresas;
 
 
 Route::post('/candidato/store', function (Request $request) {
@@ -100,15 +100,15 @@ Route::get('/empresas/create', function () {
 
 
 Route::get('/empresas/{id}', function ($id) {
-    $image = Image::find($id);
-    return view('empresas.show', ['image' => $image]);
+    $empresas = Image::find($id);
+    return view('empresas.show', ['image' => $empresas]);
 });
 
 
 
 Route::get('/empresas', function () {
-    $images = Image::all();
-    return view('empresas.index', ['images' => $images]);
+    $empresas = Image::all();
+    return view('empresas.index', ['images' => $empresas]);
 });
 
 
