@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('cargo') ->nullable();
             $table->string('local') ->nullable();
             $table->string('beneficios') ->nullable();
-            $table->string('perfileperado') ->nullable();
+            $table->string('perfilesperado') ->nullable();
             $table->string('detalhes') ->nullable();
             $table->timestamps();
         });

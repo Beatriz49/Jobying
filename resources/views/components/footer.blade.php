@@ -12,7 +12,6 @@
             </a>
         </div>
         <div class="text-lg">
-            <p>Contacto: +351 962 627 145</p>
             <p>Email: jobying62@gmail.com</p>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <h1 class="text-4xl">Criar Candidatura</h1>
+    <h1 class="text-4xl">Criar perfil de empresa</h1>
 
     <form method="POST" action="/empresas/store" enctype="multipart/form-data">
         @csrf
@@ -31,7 +31,7 @@
 
             <div>
                 <x-label for="data">data</x-label>
-                <x-input type="data" name="data" id="data" value="abcdefgh"/>
+                <x-input type="date" name="data" id="data" value="abcdefgh"/>
                 @error('data')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror

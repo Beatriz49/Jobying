@@ -1,6 +1,6 @@
 
 <x-guestLayout>
-    <h1 class="text-4xl">Lista de imagens</h1>
+    <h1 class="text-4xl">Lista de candidatos</h1>
 
 
     <div class="grid grid-cols-4 gap-4 max-w-4xl m-auto my-8">

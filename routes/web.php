@@ -9,7 +9,7 @@ use App\Models\candidato;
 use App\Http\Controllers\EmpresasController;
 use App\Models\Image;
 use App\Models\Empresas;
-
+use Illuminate\Support\Facades\Auth;
 
 Route::post('/candidato/store', function (Request $request) {
     $request->validate([
@@ -78,8 +78,8 @@ Route::post('/empresas/store', function (Request $request) {
     $imageName = time() . "." . $request->image->extension();
     $request->image->move(public_path('img2'), $imageName);
 
-    Image::create([
-        'name' => $request->input('name'),        
+    Empresas::create([
+        'name' => $request->input('name'),
         'path' => $imageName,
         'horario' => $request->input('horario'),
         'data' => $request->input('data'),
@@ -100,14 +100,14 @@ Route::get('/empresas/create', function () {
 
 
 Route::get('/empresas/{id}', function ($id) {
-    $empresas = Image::find($id);
+    $empresas = empresas::find($id);
     return view('empresas.show', ['image' => $empresas]);
 });
 
 
 
 Route::get('/empresas', function () {
-    $empresas = Image::all();
+    $empresas = empresas::all();
     return view('empresas.index', ['images' => $empresas]);
 })->name('empresas.index');
 
@@ -152,4 +152,15 @@ Route::post('/categories/store', function (Request $request) {
         'description' => $request->input('description'),
         'image' => $request->input('image'),
     ]);
+});
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });

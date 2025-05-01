@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-class Candidato extends Model
+class Empresas extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -14,7 +14,7 @@ class Candidato extends Model
         'image',
         'cargo',
         'local',
-        'beneficio',
+        'beneficios',
         'perfilesperado',
         'detalhes',
     ];
