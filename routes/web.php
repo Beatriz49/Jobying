@@ -10,6 +10,9 @@ use App\Http\Controllers\EmpresasController;
 use App\Models\Image;
 use App\Models\Empresas;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\NotificationController;
+use App\Notifications\CustomNotification;
+use SebastianBergmann\CodeCoverage\Report\Html\CustomCssFile;
 
 Route::post('/candidato/store', function (Request $request) {
     $request->validate([
@@ -160,7 +163,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [App\Http\Controllers\NotificationController::class, 'index'])->name('dashboard');
+    Route::post('/notifications', [App\Http\Controllers\NotificationController::class, 'create'])->name('notifications.create');
+    Route::post('/notifications/{id}/mark-as-read', [App\Http\Controllers\NotificationController::class, 'markAsRead'])->name('notifications.markAsRead');
+    Route::post('/notifications/mark-all-as-read', [App\Http\Controllers\NotificationController::class, 'markAllAsRead'])->name('notifications.markAllAsRead');
 });
+
+Route::get('/notifications', [CustomNotification::class, 'index'])->name('notifications.index');
+Route::get('/notifications/{id}', [CustomNotification::class, 'show'])->name('notifications.show');

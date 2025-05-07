@@ -24,32 +24,43 @@
                     >
                         Procurar Candidatos
                     </a>
+
+
+
+                    </div>
+            <div class="relative group">
+                <a
+                    href="#"
+                    class="inline-block px-6 py-3 m-2.5 bg-blue-950 text-white no-underline rounded-full text-base font-bold transition-all duration-300 ease-in-out shadow-md hover:bg-gray-500 hover:shadow-lg hover:scale-105"
+                >
+                    Registar/Login
+                </a>
+                <div
+                    class="absolute hidden group-hover:block bg-white text-black rounded-lg shadow-lg mt--4 z-80 w-40"
+                >
                     <a
                         href="register"
-                        class="inline-block px-6 py-3 m-2.5 bg-blue-950 text-white no-underline rounded-full text-base font-bold transition-all duration-300 ease-in-out shadow-md hover:bg-gray-500 hover:shadow-lg hover:-translate-y-0.5"
+                        class="block px-4 py-2 hover:bg-gray-400 rounded-t-lg transition-all duration-500"
                     >
-                        Registar/Login
+                        Registar
                     </a>
-
-                        <div
-                            class="absolute hidden group-hover:block bg-white text-black rounded-lg shadow-lg mt-2 z-50 w-40"
+                    
+                        <a
+                        href="login"
+                        class="block px-4 py-2 hover:bg-gray-400 rounded-b-lg transition-all duration-500"
                         >
+                        Login
+                        </a>         @if(Auth::check())
                             <a
-                                href="register"
-                                class="block px-4 py-2 hover:bg-gray-400 rounded-t-lg transition-all duration-1000"
+                                href="profile"
+                                class="block px-4 py-2 hover:bg-gray-400 rounded-b-lg transition-all duration-500"
                             >
-                                Registar
+                                Perfil
                             </a>
-                            <a
-                                href="login"
-                                class="block px-4 py-2 hover:bg-gray-400 rounded-b-lg transition-all duration-1000"
-                            >
-                                Login
-                            </a>
-                        </div>
-                    </div>
+
+                        @endif         </a>
+                </div>
             </div>
         </header>
 
 
-    
