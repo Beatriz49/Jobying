@@ -26,8 +26,6 @@
                         <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
                         <ul class="list-disc list-inside">
                             <li><a href="#" class="text-blue-500 hover:underline">Update Profile</a></li>
-                            <li><a href="{{ route('notifications.index') }}" class="text-blue-500 hover:underline">View Notifications</a></li>
-
                         </ul>
                     </div>
                 </div>

@@ -1,12 +1,41 @@
 <x-guest-layout>
-    <img src="/img2/{{ $image->path }}" class="mx-auto rounded-full" width="200" height="100" />
-    <h1 class="text-center">Nome da Empresa:   {{ $image->name }}</h1>
-    <h1 class="text-center">Horario:  {{ $image->horario}}</h1>
-    <h1 class="text-center">Data de submição: {{ $image->data }}</h1>
-    <h1 class="text-center">Cargo:   {{ $image->cargo}}</h1>
-    <h1 class="text-center">Local:    {{ $image->local}}</h1>
-    <h1 class="text-center">Beneficios:{{ $image->beneficios}}</h1>
-    <h1 class="text-center">Perfil desejado:{{ $image->perfilesperado}}</h1>
-    <h1 class="text-center">Detalhes:{{ $image->detalhes}}</h1>
-    <a href="/empresas" class="bg-red-400 p-4 rounded">Voltar</a>
+    <div class="max-w-xl mx-auto mt-10 bg-white shadow-lg rounded-lg p-8">
+        <div class="flex flex-col items-center">
+            <img src="/img2/{{ $image->path }}" class="rounded-full mb-6" width="200" height="100" />
+            <h2 class="text-2xl font-bold mb-4">{{ $image->name }}</h2>
+        </div>
+        <div class="space-y-3">
+            <div>
+                <span class="font-semibold">Horário:</span>
+                <span>{{ $image->horario }}</span>
+            </div>
+            <div>
+                <span class="font-semibold">Data de Submissão:</span>
+                <span>{{ $image->data }}</span>
+            </div>
+            <div>
+                <span class="font-semibold">Cargo:</span>
+                <span>{{ $image->cargo }}</span>
+            </div>
+            <div>
+                <span class="font-semibold">Local:</span>
+                <span>{{ $image->local }}</span>
+            </div>
+            <div>
+                <span class="font-semibold">Benefícios:</span>
+                <span>{{ $image->beneficios }}</span>
+            </div>
+            <div>
+                <span class="font-semibold">Perfil Desejado:</span>
+                <span>{{ $image->perfilesperado }}</span>
+            </div>
+            <div>
+                <span class="font-semibold">Detalhes:</span>
+                <span>{{ $image->detalhes }}</span>
+            </div>
+        </div>
+        <div class="mt-8 text-center">
+            <a href="/empresas" class="bg-red-400 hover:bg-red-500 text-white px-6 py-2 rounded transition">Voltar</a>
+        </div>
+    </div>
 </x-guest-layout>

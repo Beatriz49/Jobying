@@ -17,5 +17,6 @@ class Image extends Model
         'skills',
 
     ];
+
 }
 // habilitações

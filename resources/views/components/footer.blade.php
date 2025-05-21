@@ -1,19 +1,22 @@
-<footer class="text-center py-4 bg-gray-700 text-white mt-5 text-xl">
-    <div class="flex justify-between items-center">
-        <div class="flex justify-start space-x-4 text-lg">
-            <a href="https://www.instagram.com/jobying_62">
-                <img src="/imagens/Instagram_logo_2022.svg.png" width="35">
-            </a>
-            <a href="https://x.com/jobying_62">
-                <img src="/imagens/1725374683twitter-x-logo.png" width="35">
-            </a>
-            <a href="https://www.facebook.com/people/Jonbying-Portugal/pfbid0gY7pq1sPSeFzz9X7PnvydCeJ36SrQ2FkMczbHk3B996DCCqAkMz1YCZE6NkmnFwLl/">
-                <img src="/imagens/Facebook_logo_(square).png" width="35">
-            </a>
+<footer class="bg-gray-800 text-white py-8 mt-10">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <!-- Esquerda: Logo ou Marca -->
+        <div class="mb-4 md:mb-0 flex items-center space-x-3">
+            <img src="/imagens/Instagram_logo_2022.svg.png" alt="Instagram" width="32" class="hover:opacity-80 transition">
+            <img src="/imagens/1725374683twitter-x-logo.png" alt="X" width="32" class="hover:opacity-80 transition">
+            <img src="/imagens/Facebook_logo_(square).png" alt="Facebook" width="32" class="hover:opacity-80 transition">
         </div>
-        <div class="text-lg">
-            <p>Email: jobying62@gmail.com</p>
+        <!-- Centro: Links de Navegação -->
+        <div class="mb-4 md:mb-0 flex space-x-6 text-sm md:text-base">
+            <a href="/" class="hover:underline">Início</a>
+            <a href="/sobre" class="hover:underline">Sobre</a>
+        </div>
+        <!-- Direita: Informações de Contato -->
+        <div class="text-center md:text-right text-sm md:text-base">
+            <p>Email: <a href="mailto:jobying62@gmail.com" class="underline hover:text-gray-300">jobying62@gmail.com</a></p>
         </div>
     </div>
-    <p>&copy; 2024/2025 Jobying</p>
+    <div class="mt-6 border-t border-gray-700 pt-4 text-center text-xs text-gray-400">
+        &copy; 2024/2025 Jobying. Todos os direitos reservados.
+    </div>
 </footer>

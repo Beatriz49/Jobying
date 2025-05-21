@@ -6,7 +6,7 @@
         <div>
             <x-label>Nome</x-label>
             <x-input type="text" name="name" id="name"/>
-            @error('name')
+P            @error('name')
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
@@ -46,9 +46,9 @@
             @enderror
         </div>
         <div>
-            <x-label>beneficio</x-label>
-            <x-input type="text" name="beneficio" id="beneficio"/>
-            @error('beneficio')
+            <x-label>beneficios</x-label>
+            <x-input type="text" name="beneficios" id="beneficios"/>
+            @error('beneficios')
                 <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
