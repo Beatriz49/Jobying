@@ -9,7 +9,8 @@ class Empresas extends Model
     protected $fillable = [
         'name',
         'path',
-        'horario',
+        'horario_inicio',
+        'horario_fim',
         'data',
         'image',
         'cargo',

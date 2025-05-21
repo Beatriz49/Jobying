@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('path');
-            $table->string('horario') ->nullable();
+            $table->string('horario_inicio')->nullable();
+            $table->string('horario_fim')->nullable();
             $table->string('data') ->nullable();
             $table->string('cargo') ->nullable();
             $table->string('local') ->nullable();
             $table->string('beneficios') ->nullable();
             $table->string('perfilesperado') ->nullable();
-            $table->string('detalhes') ->nullable();
             $table->timestamps();
         });
     }

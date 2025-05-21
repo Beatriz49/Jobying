@@ -25,9 +25,16 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <x-label for="horario" class="font-semibold text-gray-700">Horário</x-label>
-                        <x-input type="text" name="horario" id="horario" class="w-full" value="{{ old('horario') }}"/>
-                        @error('horario')
+                        <x-label for="horario_inicio" class="font-semibold text-gray-700">Horário Início</x-label>
+                        <x-input type="time" name="horario_inicio" id="horario_inicio" class="w-full" value="{{ old('horario_inicio') }}"/>
+                        @error('horario_inicio')
+                            <p class="text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div>
+                        <x-label for="horario_fim" class="font-semibold text-gray-700">Horário Fim</x-label>
+                        <x-input type="time" name="horario_fim" id="horario_fim" class="w-full" value="{{ old('horario_fim') }}"/>
+                        @error('horario_fim')
                             <p class="text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>

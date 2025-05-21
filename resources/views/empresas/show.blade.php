@@ -7,7 +7,7 @@
         <div class="space-y-3">
             <div>
                 <span class="font-semibold">Horário:</span>
-                <span>{{ $image->horario }}</span>
+                <span>{{ $image->horario }} = {{ $image->horario_inicio }}/{{ $image->horario_fim }}</span>
             </div>
             <div>
                 <span class="font-semibold">Data de Submissão:</span>
@@ -29,10 +29,7 @@
                 <span class="font-semibold">Perfil Desejado:</span>
                 <span>{{ $image->perfilesperado }}</span>
             </div>
-            <div>
-                <span class="font-semibold">Detalhes:</span>
-                <span>{{ $image->detalhes }}</span>
-            </div>
+
         </div>
         <div class="mt-8 text-center">
             <a href="/empresas" class="bg-red-400 hover:bg-red-500 text-white px-6 py-2 rounded transition">Voltar</a>

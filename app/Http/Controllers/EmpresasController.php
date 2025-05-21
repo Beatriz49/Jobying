@@ -18,10 +18,17 @@ P            @error('name')
             @enderror
         </div>
         <div>
-            <x-label>horario</x-label>
-            <x-input type="text" name="horario" id="horario"/>
-            @error('horario')
-                <p class="text-sm text-red-600">{{ $message }}</p>
+            <x-label>Horário Início</x-label>
+            <x-input type="time" name="horario_inicio" id="horario_inicio"/>
+            @error('horario_inicio')
+            <p class="text-sm text-red-600">{{ $message }}</p>
+            @enderror
+        </div>
+        <div>
+            <x-label>Horário Fim</x-label>
+            <x-input type="time" name="horario_fim" id="horario_fim"/>
+            @error('horario_fim')
+            <p class="text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
         <div>

@@ -60,21 +60,23 @@ Route::post('/empresas/store', function (Request $request) {
     $request->validate([
         'name' => 'required',
         'image' => 'required|image:jpeg,png,jpg,gif,svg|max:2048',
-        'horario' => 'required',
+        'horario_inicio' => 'required',
+        'horario_fim' => 'required',
         'data' => 'nullable',
         'cargo' => 'required',
         'local' => 'required',
         'beneficios' => 'required',
         'perfilesperado' => 'required',
-    ]);
+        ]);
 
-    $imageName = time() . "." . $request->image->extension();
-    $request->image->move(public_path('img2'), $imageName);
+        $imageName = time() . "." . $request->image->extension();
+        $request->image->move(public_path('img2'), $imageName);
 
-    Empresas::create([
+        Empresas::create([
         'name' => $request->input('name'),
         'path' => $imageName,
-        'horario' => $request->input('horario'),
+        'horario_inicio' => $request->input('horario_inicio'),
+        'horario_fim' => $request->input('horario_fim'),
         'data' => $request->input('data'),
         'cargo' => $request->input('cargo'),
         'local' => $request->input('local'),
