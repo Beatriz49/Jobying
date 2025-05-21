@@ -16,6 +16,5 @@ class Empresas extends Model
         'local',
         'beneficios',
         'perfilesperado',
-        'detalhes',
     ];
 }

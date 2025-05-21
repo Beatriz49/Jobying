@@ -1,6 +1,6 @@
 <x-guestLayout>
 <h1 class="text-4xl">Upload de imagens</h1>
-<form method="POST" action="/images" enctype="multipart/form-data">
+<form method="POST" action="/candidato" enctype="multipart/form-data">
     @csrf
     <div class="space-y-4">
         <div>

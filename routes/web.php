@@ -3,20 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Controllers\CandidatoController;
-use App\Http\Controllers\ImageController;
-use App\Models\candidato;
-use App\Http\Controllers\EmpresasController;
 use App\Models\Image;
 use App\Models\Empresas;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JobController;
+use App\Models\Candidato;
 
 Route::post('/candidato/store', function (Request $request) {
     $request->validate([
         'name' => 'required',
-        'image' => 'required|image:jpeg,png,jpg,gif,svg|max:2048',
-        'teste' => 'required',
+        'image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'skills' => 'nullable',
         'procurando' => 'required',
         'experiencias' => 'required',
@@ -24,13 +19,12 @@ Route::post('/candidato/store', function (Request $request) {
         'idade' => 'required',
     ]);
 
-
     $imageName = time() . "." . $request->image->extension();
     $request->image->move(public_path('img'), $imageName);
-    Image::create([
+
+    Candidato::create([
         'name' => $request->input('name'),
         'path' => $imageName,
-        'teste' => $request->input('teste'),
         'skills' => $request->input('skills'),
         'procurando' => $request->input('procurando'),
         'experiencias' => $request->input('experiencias'),
@@ -46,18 +40,17 @@ Route::get('/candidato/create', function () {
 
 
 
-
 Route::get('/candidato/{id}', function ($id) {
-    $image = Image::find($id);
+    $image = Candidato::find($id);
     return view('candidato.show', ['image' => $image]);
 });
 
 
 
 Route::get('/candidato', function () {
-    $images = Image::all();
+    $images = Candidato::all();
     return view('candidato.index', ['images' => $images]);
-});
+})->name('candidato.index');
 
 
 
@@ -73,7 +66,6 @@ Route::post('/empresas/store', function (Request $request) {
         'local' => 'required',
         'beneficios' => 'required',
         'perfilesperado' => 'required',
-        'detalhes' => 'required',
     ]);
 
     $imageName = time() . "." . $request->image->extension();
@@ -86,9 +78,8 @@ Route::post('/empresas/store', function (Request $request) {
         'data' => $request->input('data'),
         'cargo' => $request->input('cargo'),
         'local' => $request->input('local'),
-        'beneficio' => $request->input('beneficio'),
+        'beneficios' => $request->input('beneficios'),
         'perfilesperado' => $request->input('perfilesperado'),
-        'detalhes' => $request->input('detalhes'),
 ]);
 
     return redirect()->route('empresas.index');
@@ -99,16 +90,15 @@ Route::get('/empresas/create', function () {
 
 
 
-
 Route::get('/empresas/{id}', function ($id) {
-    $empresas = empresas::find($id);
+    $empresas = Empresas::find($id);
     return view('empresas.show', ['image' => $empresas]);
 });
 
 
 
 Route::get('/empresas', function () {
-    $empresas = empresas::all();
+    $empresas = Empresas::all();
     return view('empresas.index', ['images' => $empresas]);
 })->name('empresas.index');
 

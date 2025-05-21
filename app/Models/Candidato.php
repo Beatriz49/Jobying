@@ -8,12 +8,12 @@ class Candidato extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'path',
         'idade',
-        'teste',
-        'image',
-        'procurando',
-        'experiencias',
+        'path',
         'skills',
+        'image',
+        'experiencias',
+        'procurando',
+        'trabalhos',
     ];
 }

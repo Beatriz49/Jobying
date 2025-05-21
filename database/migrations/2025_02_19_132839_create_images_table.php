@@ -13,12 +13,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('path');
-            $table->string('teste') ->nullable();
-            $table->string('idade') ->nullable();
-            $table->string('procurando') ->nullable();
-            $table->string('skills') ->nullable();
-            $table->string('experiencias') ->nullable();
-            $table->string('trabalhos') ->nullable();
+            $table->string('teste')->nullable();
+            $table->string('idade')->nullable();
+            $table->string('procurando')->nullable();
+            $table->string('skills')->nullable();
+            $table->string('experiencias')->nullable();
+            $table->string('trabalhos')->nullable();
             $table->timestamps();
         });
     }

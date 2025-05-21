@@ -8,18 +8,18 @@ return new class extends Migration {
     public function up() {
         Schema::create('candidatos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('name');
             $table->integer('idade');
-            $table->string('foto')->nullable();
-            $table->text('skills');
-            $table->text('experiencias');
-            $table->text('trabalhos');
+            $table->string('path');
+            $table->string('skills');
+            $table->string('experiencias');
+            $table->string('trabalhos');
             $table->string('procurando');
             $table->timestamps();
         });
     }
 
     public function down() {
-        Schema::dropIfExists('candidatos');
+        Schema::dropIfExists('candidato');
     }
 };

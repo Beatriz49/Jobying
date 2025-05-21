@@ -76,8 +76,8 @@
 
 
                 <div class="flex flex-col md:flex-row items-center justify-between gap-4 mt-8">
-                    <x-button class="bg-indigo-600 hover:bg-indigo-700 w-full md:w-auto">Salvar</x-button>
                     <a href="/empresas" class="bg-red-400 hover:bg-red-500 text-white px-6 py-2 rounded-lg transition w-full md:w-auto text-center">Voltar</a>
+                    <x-button class="bg-indigo-600 hover:bg-indigo-700 w-full md:w-auto">Salvar</x-button>
                 </div>
             </form>
         </div>

@@ -6,7 +6,7 @@
 
             <div>
                 <x-label for="name">Nome</x-label>
-                <x-input type="text" name="name" id="name" class="w-full"/>
+                <x-input type="text" name="name" id="name" class="w-full" value="{{ old('name') }}"/>
                 @error('name')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -14,7 +14,7 @@
 
             <div>
                 <x-label for="image">Imagem</x-label>
-                <x-input type="file" name="image" id="image" class="w-full"/>
+                <input type="file" name="image" id="image" class="w-full"/>
                 @error('image')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -22,7 +22,7 @@
 
             <div>
                 <x-label for="idade">Idade</x-label>
-                <x-input type="number" name="idade" id="idade" class="w-full"/>
+                <x-input type="number" name="idade" id="idade" class="w-full" value="{{ old('idade') }}"/>
                 @error('idade')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -30,7 +30,7 @@
 
             <div>
                 <x-label for="procurando">Procurando</x-label>
-                <x-input type="text" name="procurando" id="procurando" class="w-full"/>
+                <x-input type="text" name="procurando" id="procurando" class="w-full" value="{{ old('procurando') }}"/>
                 @error('procurando')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -38,7 +38,7 @@
 
             <div>
                 <x-label for="skills">Skills</x-label>
-                <x-input type="text" name="skills" id="skills" class="w-full"/>
+                <x-input type="text" name="skills" id="skills" class="w-full" value="{{ old('skills') }}"/>
                 @error('skills')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -46,7 +46,7 @@
 
             <div>
                 <x-label for="experiencias">Experiências</x-label>
-                <x-input type="text" name="experiencias" id="experiencias" class="w-full"/>
+                <x-input type="text" name="experiencias" id="experiencias" class="w-full" value="{{ old('experiencias') }}"/>
                 @error('experiencias')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -54,7 +54,7 @@
 
             <div>
                 <x-label for="trabalhos">Trabalhos</x-label>
-                <x-input type="text" name="trabalhos" id="trabalhos" class="w-full"/>
+                <x-input type="text" name="trabalhos" id="trabalhos" class="w-full" value="{{ old('trabalhos') }}"/>
                 @error('trabalhos')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
