@@ -8,6 +8,7 @@
                     <img class="h-40 w-40 object-cover rounded-full mb-4" src="/img2/{{$empresas->path}}" alt="{{ $empresas->name }}"/>
                     <p class="text-lg font-semibold text-gray-800 text-center">{{ $empresas->name }}</p>
                 </a>
+                <p class="text-gray-600 text-center mt-2">{{ $empresas->nome }}</p>
             </div>
         @endforeach
     </div>
