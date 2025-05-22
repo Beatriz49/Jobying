@@ -21,7 +21,7 @@
                 </svg>
             </button>
             <div class="absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200">
-                <a href="{{ route('dashboard') }}" class="block px-4 py-2 text-blue-950 hover:bg-blue-50 rounded-t-lg transition-colors duration-200">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="block px-4 py-2 text-blue-950 hover:bg-blue-50 rounded-t-lg transition-colors duration-200">Perfil</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="w-full text-left px-4 py-2 text-blue-950 hover:bg-blue-50 rounded-b-lg transition-colors duration-200">Logout</button>
